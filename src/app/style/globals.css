@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --colors-body-background: #09090C;
+  --colors-icon-nav: #BABABA;
+  --colors-hover-icon-nav: #6A11CB;
+}
+
+body {
+  background-color: var(--colors-body-background);
+}
+
+a {
+  cursor: pointer;
+}

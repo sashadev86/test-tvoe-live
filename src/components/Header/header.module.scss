@@ -1,0 +1,27 @@
+.header {
+  &__nav {
+    &-link {
+      &:hover {
+        & .header__nav-link-image {
+          color: var(--colors-hover-icon-nav);
+        }
+      }
+
+      &-image {
+        color: var(--colors-icon-nav);
+      }
+    }
+  }
+
+  &__link {
+    &:hover {
+      & .header__link-up {
+        color: var(--colors-hover-icon-nav);
+      }
+    }
+
+    &-up {
+      color: var(--colors-icon-nav);
+    }
+  }
+}
