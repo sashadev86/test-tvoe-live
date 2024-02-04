@@ -19,7 +19,7 @@ const Header = () => {
 
       <div className="flex flex-col justify-between h-full gap-7">
         <nav>
-          <ul className="inline-flex flex-col gap-7">
+          <ul className="inline-flex flex-col gap-[26px]">
             <li>
               <Link
                 className={`header__nav-link w-[54px] h-[54px] inline-flex p-[5px] ${styles["header__nav-link"]}`}

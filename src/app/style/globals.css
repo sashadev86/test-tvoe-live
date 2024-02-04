@@ -2,13 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/TTNormsPro/Regular/TTNormsPro-Regular.woff2) format("woff2"),
+    url(/fonts/TTNormsPro/Regular/TTNormsPro-Regular.woff) format("woff"),
+    url(/fonts/TTNormsPro/Regular/TTNormsPro-Regular.eot) format("eot"),
+    url(/fonts/TTNormsPro/Regular/TTNormsPro-Regular.ttf) format("ttf");
+}
+
+@font-face {
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(/fonts/TTNormsPro/Medium/TTNormsPro-Medium.woff2) format("woff2"),
+    url(/fonts/TTNormsPro/Medium/TTNormsPro-Medium.woff) format("woff"),
+    url(/fonts/TTNormsPro/Medium/TTNormsPro-Medium.eot) format("eot"),
+    url(/fonts/TTNormsPro/Medium/TTNormsPro-Medium.ttf) format("ttf");
+}
+
+@font-face {
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/TTNormsPro/Bold/TTNormsPro-Bold.woff2) format("woff2"),
+    url(/fonts/TTNormsPro/Bold/TTNormsPro-Bold.woff) format("woff"),
+    url(/fonts/TTNormsPro/Bold/TTNormsPro-Bold.eot) format("eot"),
+    url(/fonts/TTNormsPro/Bold/TTNormsPro-Bold.ttf) format("ttf");
+}
+
 :root {
+  /* colors */
   --colors-body-background: #09090C;
   --colors-icon-nav: #BABABA;
   --colors-hover-icon-nav: #6A11CB;
+
+  /* gradient */
+  --gradient-bg-blue: linear-gradient(90.00deg, rgb(106, 17, 203), rgb(37, 117, 252) 100%);
+  --gradient-bg-dark: linear-gradient(180.00deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.13) 50%, rgba(255, 255, 255, 0.1) 100%);
 }
 
 body {
+  font-family: "TT Norms Pro", sans-serif;
   background-color: var(--colors-body-background);
 }
 

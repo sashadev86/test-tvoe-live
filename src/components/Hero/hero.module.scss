@@ -1,0 +1,11 @@
+.hero {
+  &__button {
+    &-see {
+      background: var(--gradient-bg-blue);
+    }
+
+    &-about {
+      background: var(--gradient-bg-dark);
+    }
+  }
+}
