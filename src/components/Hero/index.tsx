@@ -7,7 +7,7 @@ import styles from "./hero.module.scss";
 
 const Hero = () => {
   return (
-    <section className="relative w-full pt-[294px] pb-[24px] flex flex-col items-center">
+    <section className="mb-[68px] relative w-full pt-[294px] pb-[24px] flex flex-col items-center">
       <Image
         className="absolute top-0 right-[3px] z-[-1]"
         src={heroBg}
@@ -17,13 +17,7 @@ const Hero = () => {
       />
 
       <div className="flex flex-col items-center gap-[36px] max-w-[886px] translate-x-[-12.2%]">
-        <Image
-          // className="mb-[30px]"
-          src={imageTitle}
-          width={576}
-          height={228}
-          alt={""}
-        />
+        <Image src={imageTitle} width={576} height={228} alt={""} />
         <Text
           classes="text-white text-[40px] font-medium leading-[51px] text-center tracking-[.1px]"
           text=" Неувядающий авантюрист и пытливый археолог-исследователь по‑прежнему в седле."

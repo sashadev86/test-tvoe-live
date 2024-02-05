@@ -1,0 +1,11 @@
+.new-films {
+  &__swiper {
+    &-slide {
+      background: var(--gradient-bg-blue);
+    }
+  }
+}
+
+.activeSlide {
+  border: 2px solid #fff; // Пример стиля для активного слайда
+}
