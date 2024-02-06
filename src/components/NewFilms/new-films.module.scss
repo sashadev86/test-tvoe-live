@@ -1,11 +1,56 @@
 .new-films {
   &__swiper {
+    padding: 8px;
+    margin: -8px;
+
     &-slide {
-      background: var(--gradient-bg-blue);
+      &-link {
+        &-wrapper {
+          &::before {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: -5px;
+            width: calc(100% + 8px);
+            height: calc(100% + 8px);
+            background: var(--colors-body-background);
+            border-radius: 28px;
+            z-index: -1;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: -7px;
+            left: -8px;
+            width: calc(100% + 16px);
+            height: calc(100% + 14px);
+            background: var(--gradient-bg-blue);
+            border-radius: 28px;
+            z-index: -2;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+          }
+        }
+
+        &:hover .new-films__swiper-slide-link-wrapper::after {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &:hover .new-films__swiper-slide-link-wrapper::before {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      &-rating {
+        background: var(--gradient-bg-blue);
+      }
     }
   }
-}
-
-.activeSlide {
-  border: 2px solid #fff; // Пример стиля для активного слайда
 }
