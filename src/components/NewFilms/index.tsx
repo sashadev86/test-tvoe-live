@@ -13,7 +13,7 @@ const NewFilms = () => {
   const { mediaList } = filmsAndSeriesData;
 
   return (
-    <div>
+    <section className="pb-[55px]">
       <Text
         classes="mb-[26px] text-white text-[40px] font-bold leading-[51px]"
         tag="h2"
@@ -23,7 +23,7 @@ const NewFilms = () => {
       <Swiper
         className={`text-white ${styles["new-films__swiper"]}`}
         modules={[Keyboard]}
-        slidesPerView={3.95}
+        slidesPerView={3.978}
         spaceBetween={44}
         keyboard={{
           enabled: true,
@@ -34,11 +34,11 @@ const NewFilms = () => {
           media.isNewRelease !== false ? (
             <SwiperSlide key={media.id}>
               <Link
-                className={`relative flex flex-col gap-[19px] ${styles["new-films__swiper-slide-link"]}`}
+                className={`relative flex flex-col gap-[19px] max-w-fit ${styles["new-films__swiper-slide-link"]}`}
                 href={media.id.toString()}
               >
                 <div
-                  className={`relative ${styles["new-films__swiper-slide-link-wrapper"]}`}
+                  className={`relative max-w-fit ${styles["new-films__swiper-slide-link-wrapper"]}`}
                 >
                   <Image
                     className="rounded-[20px] max-h-[597px]"
@@ -46,6 +46,7 @@ const NewFilms = () => {
                     width={398}
                     height={597}
                     alt={media.title}
+                    priority
                   />
                 </div>
                 <Text
@@ -63,7 +64,7 @@ const NewFilms = () => {
           ) : null
         )}
       </Swiper>
-    </div>
+    </section>
   );
 };
 

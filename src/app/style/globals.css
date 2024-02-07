@@ -35,6 +35,28 @@
     url(/fonts/TTNormsPro/Bold/TTNormsPro-Bold.ttf) format("ttf");
 }
 
+@font-face {
+  font-family: "TT Norms Pro";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(/fonts/TTNormsPro/BlackItalic/TTNormsPro-BlackItalic.woff2) format("woff2"),
+    url(/fonts/TTNormsPro/BlackItalic/TTNormsPro-BlackItalic.woff) format("woff"),
+    url(/fonts/TTNormsPro/BlackItalic/TTNormsPro-BlackItalic.eot) format("eot"),
+    url(/fonts/TTNormsPro/BlackItalic/TTNormsPro-BlackItalic.ttf) format("ttf");
+}
+
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(/fonts/Archivo/BlackItalic/BlackItalic.woff2) format("woff2"),
+    url(/fonts/Archivo/BlackItalic/BlackItalic.woff) format("woff"),
+    url(/fonts/Archivo/BlackItalic/BlackItalic.eot) format("eot"),
+    url(/fonts/Archivo/BlackItalic/BlackItalic.ttf) format("ttf");
+}
+
 :root {
   /* colors */
   --colors-body-background: #09090C;

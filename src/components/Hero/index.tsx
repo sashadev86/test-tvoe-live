@@ -9,14 +9,14 @@ const Hero = () => {
   return (
     <section className="mb-[68px] relative w-full pt-[294px] pb-[24px] flex flex-col items-center">
       <Image
-        className="absolute top-0 right-[3px] z-[-1]"
+        className="absolute top-0 right-[11px] z-[-1]"
         src={heroBg}
         width={1250}
         height={800}
         alt={""}
       />
 
-      <div className="flex flex-col items-center gap-[36px] max-w-[886px] translate-x-[-12.2%]">
+      <div className="flex flex-col items-center gap-[36px] max-w-[886px] translate-x-[-12.6%]">
         <Image src={imageTitle} width={576} height={228} alt={""} />
         <Text
           classes="text-white text-[40px] font-medium leading-[51px] text-center tracking-[.1px]"
