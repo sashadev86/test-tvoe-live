@@ -37,12 +37,14 @@
           }
         }
 
-        &:hover .new-films__swiper-slide-link-wrapper::after {
+        &:hover .new-films__swiper-slide-link-wrapper::after,
+        &:focus .new-films__swiper-slide-link-wrapper::after {
           opacity: 1;
           visibility: visible;
         }
 
-        &:hover .new-films__swiper-slide-link-wrapper::before {
+        &:hover .new-films__swiper-slide-link-wrapper::before,
+        &:focus .new-films__swiper-slide-link-wrapper::before {
           opacity: 1;
           visibility: visible;
         }

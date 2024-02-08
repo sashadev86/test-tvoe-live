@@ -3,7 +3,6 @@
 import Text from "../Text";
 import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Keyboard } from "swiper/modules";
 import { filmsAndSeriesData } from "@/Data";
 import styles from "./top-films.module.scss";
 import Link from "next/link";
@@ -21,12 +20,10 @@ const TopFilms = () => {
     return rankA - rankB;
   });
 
-  console.log(topMediaList);
-
   return (
-    <section className="pt-[50px]">
+    <section className="pt-[50px] pb-[200px]">
       <div
-        className={`flex items-center gap-[20px] mb-[19px] ${styles["top-films__wrapper"]}`}
+        className={`flex items-center gap-[20px] ${styles["top-films__wrapper"]}`}
       >
         <Text
           classes={`text-[52px] font-black italic text-white uppercase pr-[5px] ml-[-3px] ${styles["top-films__wrapper-title-italic"]}`}
@@ -42,33 +39,35 @@ const TopFilms = () => {
 
       <Swiper
         className={`text-white ${styles["top-films__swiper"]}`}
-        slidesPerView={2.753}
-        spaceBetween={100}
-        modules={[Keyboard]}
-        keyboard={{
-          enabled: true,
-        }}
+        slidesPerView={2.71}
+        spaceBetween={78}
+        centeredSlides={true}
+        initialSlide={1}
       >
         {topMediaList.map((media) =>
           media.weeklyTop && media.weeklyTop[0].isInTop ? (
             <SwiperSlide key={media.id}>
               <Link
-                className="relative flex items-center"
+                className={`relative flex items-center ml-[96px] outline-none py-[10px] ${styles["top-films__swiper-slide-link"]}`}
                 href={media.id.toString()}
               >
                 <Text
-                  classes={`pl-[5px] ml-[-5px] z-[-1] font-[Archivo] text-[360px] leading-[392px] ${styles["top-films__swiper-slide-text"]}`}
+                  classes={`pl-[5px] ml-[-5px] z-[-1] font-[Archivo] text-[360px] leading-[392px] ${styles["top-films__swiper-slide-link-text"]}`}
                   tag={"span"}
                   text={media.weeklyTop[0].rank?.toString() || ""}
                 />
-                <Image
-                  className="rounded-[20px] h-[597px] translate-x-[-79px]"
-                  src={media.thumbnail}
-                  width={398}
-                  height={597}
-                  alt={media.title}
-                  priority
-                />
+                <div
+                  className={`relative max-w-fit w-[398px] translate-x-[-79px] ${styles["top-films__swiper-slide-link-wrapper"]}`}
+                >
+                  <Image
+                    className={`rounded-[20px] min-w-[398px] h-[597px] ${styles["top-films__swiper-slide-link-wrapper-image"]}`}
+                    src={media.thumbnail}
+                    width={398}
+                    height={597}
+                    alt={media.title}
+                    priority
+                  />
+                </div>
               </Link>
             </SwiperSlide>
           ) : null

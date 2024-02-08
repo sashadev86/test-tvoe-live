@@ -2,7 +2,6 @@
 
 import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Keyboard } from "swiper/modules";
 import Text from "../Text";
 import { filmsAndSeriesData } from "@/Data";
 import Link from "next/link";
@@ -22,19 +21,15 @@ const NewFilms = () => {
 
       <Swiper
         className={`text-white ${styles["new-films__swiper"]}`}
-        modules={[Keyboard]}
-        slidesPerView={3.978}
+        slidesPerView={3.962}
         spaceBetween={44}
-        keyboard={{
-          enabled: true,
-        }}
         loop={true}
       >
         {mediaList.map((media) =>
           media.isNewRelease !== false ? (
             <SwiperSlide key={media.id}>
               <Link
-                className={`relative flex flex-col gap-[19px] max-w-fit ${styles["new-films__swiper-slide-link"]}`}
+                className={`relative flex flex-col gap-[19px] max-w-fit outline-none ${styles["new-films__swiper-slide-link"]}`}
                 href={media.id.toString()}
               >
                 <div
