@@ -20,6 +20,8 @@ const TopFilms = () => {
     return rankA - rankB;
   });
 
+  // console.log(topMediaList);
+
   return (
     <section className="pt-[50px] pb-[200px]">
       <div
@@ -40,7 +42,7 @@ const TopFilms = () => {
       <Swiper
         className={`text-white ${styles["top-films__swiper"]}`}
         slidesPerView={2.71}
-        spaceBetween={78}
+        spaceBetween={79}
         centeredSlides={true}
         initialSlide={1}
       >
@@ -48,7 +50,7 @@ const TopFilms = () => {
           media.weeklyTop && media.weeklyTop[0].isInTop ? (
             <SwiperSlide key={media.id}>
               <Link
-                className={`relative flex items-center ml-[96px] outline-none py-[10px] ${styles["top-films__swiper-slide-link"]}`}
+                className={`relative flex items-center ml-[95px] outline-none py-[10px] ${styles["top-films__swiper-slide-link"]}`}
                 href={media.id.toString()}
               >
                 <Text

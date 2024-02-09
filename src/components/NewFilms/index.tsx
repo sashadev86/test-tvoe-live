@@ -1,6 +1,6 @@
 "use client";
 
-import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Text from "../Text";
 import { filmsAndSeriesData } from "@/Data";
@@ -20,9 +20,10 @@ const NewFilms = () => {
       />
 
       <Swiper
-        className={`text-white ${styles["new-films__swiper"]}`}
+        className={`text-white pl-[8px] py-[8px] ml-[-8px] my-[-8px] ${styles["new-films__swiper"]}`}
         slidesPerView={3.962}
         spaceBetween={44}
+        initialSlide={1}
         loop={true}
       >
         {mediaList.map((media) =>
