@@ -346,7 +346,7 @@ export const filmsAndSeriesData: { mediaList: Media[] } = {
       isNewRelease: false,
       thumbnail: "/img/films-posters/witcher/witcher.png",
       details: {
-        imgBg: null,
+        imgBg: "/img/films-posters/witcher/witcher-detail-bg.png",
         imgTitleLogo: null,
       },
       premiere: "2019-12-20",
@@ -361,12 +361,48 @@ export const filmsAndSeriesData: { mediaList: Media[] } = {
       seasons: [
         {
           seasonNumber: 1,
-          description: "",
+          description:
+            "Геральт путешествует по Континенту (в сопровождении своей лошади Плотвы) и промышляет убийством монстров в за деньги.",
           episodes: [
             {
               episodeNumber: 1,
               thumbnail: "/img/films-posters/plug/plug.png",
-              duration: { hours: 0, minutes: 43 },
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 2,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 3,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 4,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 5,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 6,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 7,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 8,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
             },
             // структура для других эпизодов
           ],
@@ -378,7 +414,89 @@ export const filmsAndSeriesData: { mediaList: Media[] } = {
             {
               episodeNumber: 1,
               thumbnail: "/img/films-posters/plug/plug.png",
-              duration: { hours: 0, minutes: 42 },
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 2,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 3,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 4,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 5,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 6,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 7,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 8,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            // структура для других эпизодов
+          ],
+        },
+        {
+          seasonNumber: 3,
+          description: "",
+          episodes: [
+            {
+              episodeNumber: 1,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 2,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 3,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 4,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 5,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 6,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 7,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
+            },
+            {
+              episodeNumber: 8,
+              thumbnail: "/img/films-posters/plug/plug.png",
+              duration: { hours: 0, minutes: 60 },
             },
             // структура для других эпизодов
           ],

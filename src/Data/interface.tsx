@@ -31,7 +31,7 @@ export interface Media {
   content: string;
   description: string;
   genre: string;
-  genres?: string[];
+  genres: string[];
   isNewRelease: boolean;
   thumbnail: string;
   details?: Detail;

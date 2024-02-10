@@ -1,0 +1,20 @@
+.detail {
+  &__swiper {
+    padding-top: 19px;
+    padding-left: 15px;
+    margin-left: -15px;
+
+    &-slide {
+      &-link {
+        &:hover .detail__swiper-slide-link-image,
+        &:focus .detail__swiper-slide-link-image {
+          @apply scale-105;
+        }
+      }
+    }
+  }
+}
+
+.tab-active {
+  @apply text-[#09090C] bg-[#FFFFFF];
+}
