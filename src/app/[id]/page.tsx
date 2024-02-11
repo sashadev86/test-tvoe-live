@@ -1,3 +1,6 @@
+import DetailPage from "@/components/DetailPage";
+// import "swiper/css";
+
 interface Props {
   params: {
     id: string;
@@ -5,9 +8,13 @@ interface Props {
 }
 
 const DetailFilm = ({ params }: Props) => {
-  
+  const id = params.id;
 
-  return <div className="text-white">DetailFilm ID: {params.id}</div>;
+  return (
+  <main className="flex min-h-screen flex-col pl-[215px]" id="main">
+    <DetailPage id={id} />
+  </main>
+  );
 };
 
 export default DetailFilm;

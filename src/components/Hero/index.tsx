@@ -26,11 +26,11 @@ const Hero = () => {
 
         <div className="flex gap-[24px]">
           <Button
-            className={`text-[30px] font-medium leading-normal text-white py-[18px] px-[52px] rounded-2xl ${styles["hero__button-see"]} hover:opacity-70 transition-opacity duration-300 ease-in-out `}
+            className={`text-[30px] font-medium leading-normal text-white py-[18px] px-[52px] rounded-2xl ${styles["hero__button-see"]} hover:opacity-70 transition-opacity duration-300 ease-in-out`}
             text="Смотреть"
           />
           <Button
-            className={`text-[30px] font-medium leading-normal text-white py-[18px] px-[52px] rounded-2xl ${styles["hero__button-about"]} backdrop-blur-[20px] hover:opacity-70 transition-opacity duration-300 ease-in-out `}
+            className={`text-[30px] font-medium leading-normal text-white py-[18px] px-[52px] rounded-2xl ${styles["hero__button-about"]} backdrop-blur-[20px] hover:opacity-70 transition-opacity duration-300 ease-in-out`}
             text="О фильме"
           />
         </div>
