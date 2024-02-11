@@ -13,7 +13,9 @@
   }
 
   &__swiper {
-    padding-top: 9px;
+    & div {
+      @apply flex w-fit;
+    }
 
     &-slide {
       &-link {

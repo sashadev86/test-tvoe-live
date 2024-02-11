@@ -1,4 +1,5 @@
 import DetailPage from "@/components/DetailPage";
+// import "swiper/css";
 
 interface Props {
   params: {

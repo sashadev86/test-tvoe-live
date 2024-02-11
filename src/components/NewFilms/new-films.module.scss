@@ -1,7 +1,8 @@
 .new-films {
   &__swiper {
-    padding: 8px;
-    margin: -8px;
+    & div {
+      @apply flex w-fit;
+    }
 
     &-slide {
       &-link {
@@ -48,10 +49,6 @@
           opacity: 1;
           visibility: visible;
         }
-      }
-
-      &-rating {
-        background: var(--gradient-bg-blue);
       }
     }
   }

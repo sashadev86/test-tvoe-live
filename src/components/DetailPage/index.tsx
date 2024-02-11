@@ -1,17 +1,16 @@
 "use client";
 
+import { Swiper, SwiperSlide } from "swiper/react";
 import { filmsAndSeriesData } from "@/Data";
 import Image from "next/image";
 import Text from "../Text";
 import Button from "../Button";
 import Icon from "../Icon/Icon";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { pluralMinutes } from "@/utils";
-import styles from "./detailPage.module.scss";
+import { getMonthInGenitiveCase, pluralMinutes } from "@/utils";
 import { Media } from "@/Data/interface";
+import styles from "./detailPage.module.scss";
 
 interface PropsDetailPage {
   id: string;
@@ -50,17 +49,13 @@ const DetailPage = ({ id }: PropsDetailPage) => {
     setSelectedSeason(seasonNumber);
   };
 
-  console.log(similarFilms);
-  // console.log(mediaItem);
-
-  // const selectedSeasonData = mediaItem.seasons.find(
-  //   (season) => season.seasonNumber === selectedSeason
-  // );
-
-  // console.log(selectedSeasonData);
+  const premiereDate = new Date(mediaItem.premiere || "");
+  const formattedPremiereDate = `${premiereDate.getDate()} ${getMonthInGenitiveCase(
+    premiereDate.getMonth()
+  )} ${premiereDate.getFullYear()}`;
 
   return (
-    <section className="detail">
+    <section>
       <div className="relative pt-[90px] mb-[60px]">
         {mediaItem && mediaItem.details && mediaItem.details.imgBg !== null && (
           <Image
@@ -210,20 +205,20 @@ const DetailPage = ({ id }: PropsDetailPage) => {
 
         {mediaItem && mediaItem.seasons && (
           <Swiper
-            className={`${styles["detail__swiper"]}`}
+            className={`${styles["detail-page__swiper"]} relative pt-[19px] pl-[15px] ml-[-15px] overflow-hidden z-[1]`}
             slidesPerView={3.06}
             spaceBetween={19}
           >
             {mediaItem.seasons
               .find((season) => season.seasonNumber === selectedSeason)
               ?.episodes.map((episode, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide className="flex flex-col" key={index}>
                   <Link
-                    className={`outline-none ${styles["detail__swiper-slide-link"]}`}
+                    className={`outline-none ${styles["detail-page__swiper-slide-link"]}`}
                     href="#"
                   >
                     <Image
-                      className={`mb-[40px] rounded-[20px] ${styles["detail__swiper-slide-link-image"]} transition-transform duration-300 ease-in-out`}
+                      className={`mb-[40px] rounded-[20px] ${styles["detail-page__swiper-slide-link-image"]} transition-transform duration-300 ease-in-out`}
                       src={episode.thumbnail}
                       width={577}
                       height={306}
@@ -278,35 +273,166 @@ const DetailPage = ({ id }: PropsDetailPage) => {
       {similarFilms.length > 0 && (
         <div>
           <Text
-            classes="mb-[24px] text-[40px] text-bold leading-[51px] text-white"
+            classes="mb-[10px] text-[40px] text-bold leading-[51px] text-white"
             tag="h2"
             text={"Похожее"}
           />
           <Swiper
-            className="mb-[60px]"
+            className={`mb-[50px] ${styles["detail-page__similar"]} relative pt-[10px] pb-[10px] pl-[10px] ml-[-10px] overflow-hidden z-[1]`}
             slidesPerView={6.2}
             spaceBetween={24}
             loop={true}
           >
             {similarFilms.map((film) => (
-              <SwiperSlide key={film.id}>
-                <Link className="relative" href={film.id.toString()}>
-                  <Image
-                    className="rounded-[20px] max-h-[382px]"
-                    src={film.thumbnail}
-                    width={255}
-                    height={382}
-                    alt={film.title}
-                    priority
-                  />
+              <SwiperSlide
+                className={`${styles["detail-page__similar-slide"]}`}
+                key={film.id}
+              >
+                <Link
+                  className={`relative ${styles["detail-page__similar-slide-link"]}`}
+                  href={film.id.toString()}
+                >
+                  <div
+                    className={`relative ${styles["detail-page__similar-slide-link-wrapper"]}`}
+                  >
+                    <Image
+                      className="rounded-[20px] max-h-[382px]"
+                      src={film.thumbnail}
+                      width={255}
+                      height={382}
+                      alt={film.title}
+                      priority
+                    />
+                  </div>
 
-                  <Text classes={"text-white"} tag={"p"} text={film.rating || ""} />
+                  <Text
+                    classes="py-[4px] px-[13px] absolute top-[12px] left-[12px] text-[24px] font-medium leading-[31px] text-white bg-gradient-blue rounded-[8px]"
+                    tag="p"
+                    text={film.rating || ""}
+                  />
                 </Link>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
       )}
+
+      <div className="mb-[100px]">
+        <Text
+          classes="mb-[22px] text-[40px] font-bold leading-[51px] text-white"
+          tag={"h2"}
+          text={"Информация"}
+        />
+        <div className="flex gap-x-[100px]">
+          <div className="flex flex-col gap-y-[22px]">
+            {mediaItem && mediaItem.premiere && (
+              <div className="flex flex-col gap-[16px]">
+                <Text
+                  classes={
+                    "text-[28px] font-normal leading-[36px] text-white/30"
+                  }
+                  tag={"p"}
+                  text={"Премьера в мире"}
+                />
+                <Text
+                  classes={"text-[28px] font-normal leading-[36px] text-white"}
+                  tag={"p"}
+                  text={formattedPremiereDate}
+                />
+              </div>
+            )}
+            {mediaItem && mediaItem.originalTitle && (
+              <div className="flex flex-col gap-[16px]">
+                <Text
+                  classes={
+                    "text-[28px] font-normal leading-[36px] text-white/30"
+                  }
+                  tag={"p"}
+                  text={"Оригинальное название"}
+                />
+                <Text
+                  classes={"text-[28px] font-normal leading-[36px] text-white"}
+                  tag={"p"}
+                  text={mediaItem.originalTitle}
+                />
+              </div>
+            )}
+          </div>
+          <div className="flex flex-col gap-y-[22px]">
+            {mediaItem && mediaItem.country && (
+              <div className="flex flex-col gap-[16px]">
+                <Text
+                  classes={
+                    "text-[28px] font-normal leading-[36px] text-white/30"
+                  }
+                  tag={"p"}
+                  text={"Страна"}
+                />
+                <Text
+                  classes={"text-[28px] font-normal leading-[36px] text-white"}
+                  tag={"p"}
+                  text={mediaItem.country}
+                />
+              </div>
+            )}
+            {mediaItem && mediaItem.genres && (
+              <div className="flex flex-col gap-[16px]">
+                <Text
+                  classes={
+                    "text-[28px] font-normal leading-[36px] text-white/30"
+                  }
+                  tag={"p"}
+                  text={"Жанры"}
+                />
+                <Text
+                  classes={"text-[28px] font-normal leading-[36px] text-white"}
+                  tag={"p"}
+                  text={mediaItem.genres.join(", ")}
+                />
+              </div>
+            )}
+          </div>
+          <div className="flex flex-col gap-y-[22px]">
+            {mediaItem && mediaItem.languages && (
+              <div className="flex flex-col gap-[16px]">
+                <Text
+                  classes={
+                    "text-[28px] font-normal leading-[36px] text-white/30"
+                  }
+                  tag={"p"}
+                  text={"Язык аудиодорожки"}
+                />
+                <Text
+                  classes={"text-[28px] font-normal leading-[36px] text-white"}
+                  tag={"p"}
+                  text={mediaItem.languages.join(", ")}
+                />
+              </div>
+            )}
+            {mediaItem && mediaItem.quality && (
+              <div className="flex flex-col gap-[16px]">
+                <Text
+                  classes={
+                    "text-[28px] font-normal leading-[36px] text-white/30"
+                  }
+                  tag={"p"}
+                  text={"Жанры"}
+                />
+                <div className="flex items-center gap-[10px]">
+                  {mediaItem.quality.map((quality, index) => (
+                    <Text
+                      classes={"p-[12px] text-[28px] font-normal leading-[36px] text-white bg-gradient-quality rounded-[8px] w-fit"}
+                      tag={"p"}
+                      text={quality}
+                      key={index}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

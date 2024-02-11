@@ -2,7 +2,6 @@
 
 import Text from "../Text";
 import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
-import "swiper/css";
 import { filmsAndSeriesData } from "@/Data";
 import styles from "./top-films.module.scss";
 import Link from "next/link";
@@ -20,10 +19,8 @@ const TopFilms = () => {
     return rankA - rankB;
   });
 
-  // console.log(topMediaList);
-
   return (
-    <section className="pt-[50px] pb-[200px]">
+    <section className="pt-[42px] pb-[183px]">
       <div
         className={`flex items-center gap-[20px] ${styles["top-films__wrapper"]}`}
       >
@@ -40,7 +37,7 @@ const TopFilms = () => {
       </div>
 
       <Swiper
-        className={`text-white ${styles["top-films__swiper"]}`}
+        className={`relative ${styles["top-films__swiper"]} py-[19px] overflow-hidden z-[1]`}
         slidesPerView={2.71}
         spaceBetween={79}
         centeredSlides={true}
@@ -50,7 +47,7 @@ const TopFilms = () => {
           media.weeklyTop && media.weeklyTop[0].isInTop ? (
             <SwiperSlide key={media.id}>
               <Link
-                className={`relative flex items-center ml-[95px] outline-none py-[10px] ${styles["top-films__swiper-slide-link"]}`}
+                className={`relative flex items-center ml-[95px] outline-none ${styles["top-films__swiper-slide-link"]}`}
                 href={media.id.toString()}
               >
                 <Text

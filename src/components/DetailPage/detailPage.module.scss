@@ -1,14 +1,68 @@
-.detail {
+.detail-page {
   &__swiper {
-    padding-top: 19px;
-    padding-left: 15px;
-    margin-left: -15px;
+     & div {
+      @apply flex w-fit;
+    }
 
     &-slide {
       &-link {
-        &:hover .detail__swiper-slide-link-image,
-        &:focus .detail__swiper-slide-link-image {
+        &:hover .detail-page__swiper-slide-link-image,
+        &:focus .detail-page__swiper-slide-link-image {
           @apply scale-105;
+        }
+      }
+    }
+  }
+
+  &__similar {
+     & div {
+      @apply flex w-fit;
+    }
+
+    &-slide {
+      &-link {
+        &-wrapper {
+          &::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: calc(100% + 10px);
+            height: calc(100% + 10px);
+            background: var(--colors-body-background);
+            border-radius: 22px;
+            z-index: -1;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: -7px;
+            left: -8px;
+            width: calc(100% + 16px);
+            height: calc(100% + 14px);
+            background: var(--gradient-bg-blue);
+            border-radius: 22px;
+            z-index: -2;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+          }
+        }
+
+        &:hover .detail-page__similar-slide-link-wrapper::before,
+        &:focus .detail-page__similar-slide-link-wrapper::before {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &:hover .detail-page__similar-slide-link-wrapper::after,
+        &:focus .detail-page__similar-slide-link-wrapper::after {
+          opacity: 1;
+          visibility: visible;
         }
       }
     }

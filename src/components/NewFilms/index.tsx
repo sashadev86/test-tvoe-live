@@ -1,7 +1,6 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import Text from "../Text";
 import { filmsAndSeriesData } from "@/Data";
 import Link from "next/link";
@@ -14,13 +13,13 @@ const NewFilms = () => {
   return (
     <section className="pb-[55px]">
       <Text
-        classes="mb-[26px] text-white text-[40px] font-bold leading-[51px]"
+        classes="text-white text-[40px] font-bold leading-[51px]"
         tag="h2"
         text={"Новинки"}
       />
 
       <Swiper
-        className={`text-white pl-[8px] py-[8px] ml-[-8px] my-[-8px] ${styles["new-films__swiper"]}`}
+        className={`${styles["new-films__swiper"]} relative pt-[26px] pl-[8px] pb-[8px] ml-[-8px] overflow-hidden z-[1]`}
         slidesPerView={3.962}
         spaceBetween={44}
         initialSlide={1}
@@ -51,7 +50,7 @@ const NewFilms = () => {
                   text={media.title}
                 />
                 <Text
-                  classes={`absolute top-[28px] left-[29px] px-[22px] py-[6px] ${styles["new-films__swiper-slide-rating"]} text-white text-[28px] font-medium leading-[36px] rounded-[12px]`}
+                  classes={`absolute top-[28px] left-[29px] px-[22px] py-[6px] bg-gradient-blue text-white text-[28px] font-medium leading-[36px] rounded-[12px]`}
                   tag="span"
                   text={media.rating?.toString() ?? "N/A"}
                 />
