@@ -26,17 +26,17 @@ const NewFilms = () => {
         loop={true}
       >
         {mediaList.map((media) =>
-          media.isNewRelease !== false ? (
+          media.isNewRelease ? (
             <SwiperSlide key={media.id}>
               <Link
                 className={`relative flex flex-col gap-[19px] max-w-fit outline-none ${styles["new-films__swiper-slide-link"]}`}
-                href={media.id.toString()}
+                href={`/series/${media.id.toString()}`}
               >
                 <div
                   className={`relative max-w-fit ${styles["new-films__swiper-slide-link-wrapper"]}`}
                 >
                   <Image
-                    className="rounded-[20px] max-h-[597px]"
+                    className="rounded-[20px] max-w-[398px] max-h-[597px]"
                     src={media.thumbnail}
                     width={398}
                     height={597}

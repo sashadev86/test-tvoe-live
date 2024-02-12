@@ -1,0 +1,16 @@
+.series {
+  &__swiper {
+     & div {
+      @apply flex w-fit;
+    }
+
+    &-slide {
+      &-link {
+        &:hover .series__swiper-slide-link-image,
+        &:focus .series__swiper-slide-link-image {
+          @apply scale-105;
+        }
+      }
+    }
+  }
+}
