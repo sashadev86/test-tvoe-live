@@ -1,23 +1,30 @@
 "use client";
 
 import Text from "../Text";
-import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { filmsAndSeriesData } from "@/Data";
 import styles from "./top-films.module.scss";
 import Link from "next/link";
 import Image from "next/image";
+import { useMemo } from "react";
 
 const TopFilms = () => {
   const { mediaList } = filmsAndSeriesData;
-  const topMediaList = mediaList.filter(
-    (media) => media.weeklyTop && media.weeklyTop[0].isInTop
-  );
+  
+  const topMediaList = useMemo(() => {
+    const filteredList = mediaList.filter(
+      (media) => media.weeklyTop && media.weeklyTop[0].isInTop
+    );
 
-  topMediaList.sort((a, b) => {
-    const rankA = (a.weeklyTop && a.weeklyTop[0]?.rank) || 0;
-    const rankB = (b.weeklyTop && b.weeklyTop[0]?.rank) || 0;
-    return rankA - rankB;
-  });
+    // Sort list
+    filteredList.sort((a, b) => {
+      const rankA = (a.weeklyTop && a.weeklyTop[0]?.rank) || 0;
+      const rankB = (b.weeklyTop && b.weeklyTop[0]?.rank) || 0;
+      return rankA - rankB;
+    });
+
+    return filteredList;
+  }, [mediaList]);
 
   return (
     <section className="pt-[42px] pb-[183px]">
@@ -48,7 +55,7 @@ const TopFilms = () => {
             <SwiperSlide key={media.id}>
               <Link
                 className={`relative flex items-center ml-[95px] outline-none ${styles["top-films__swiper-slide-link"]}`}
-                href={media.id.toString()}
+                href={`/series/${media.id.toString()}`}
               >
                 <Text
                   classes={`pl-[5px] ml-[-5px] z-[-1] font-[Archivo] text-[360px] leading-[392px] ${styles["top-films__swiper-slide-link-text"]}`}

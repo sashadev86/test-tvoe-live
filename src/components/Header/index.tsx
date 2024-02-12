@@ -10,12 +10,16 @@ import styles from "./header.module.scss";
 const Header = () => {
   return (
     <header className="header fixed h-screen pl-[55px] py-10 flex flex-col gap-y-[110px]">
-      <Image
-        className="min-h-[50px] pl-[9px]"
-        src={logo}
-        alt="Логотип"
-        priority
-      />
+      <Link href={"/"}>
+        <Image
+          className="max-w-[144px] max-h-[57px] pl-[9px]"
+          width={144}
+          height={50}
+          src={logo}
+          alt="Логотип"
+          priority
+        />
+      </Link>
 
       <div className="flex flex-col justify-between h-full gap-7">
         <nav>

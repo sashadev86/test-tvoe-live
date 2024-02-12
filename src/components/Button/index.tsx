@@ -1,5 +1,5 @@
 import React from 'react';
-interface Props {
+interface PropsButton {
   className: string;
   text: string;
   disabled?: boolean;
@@ -7,7 +7,13 @@ interface Props {
   onClick?: () => void;
 }
 
-const Button = ({ className, text, disabled = false, children, onClick }: Props) => {
+const Button = ({
+  className,
+  text,
+  disabled = false,
+  children,
+  onClick,
+}: PropsButton) => {
   return (
     <button className={className} disabled={disabled} onClick={onClick}>
       {text}
