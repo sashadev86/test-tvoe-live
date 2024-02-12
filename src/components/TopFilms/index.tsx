@@ -7,10 +7,11 @@ import styles from "./top-films.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import { useMemo } from "react";
+// import "swiper/css";
 
 const TopFilms = () => {
   const { mediaList } = filmsAndSeriesData;
-  
+
   const topMediaList = useMemo(() => {
     const filteredList = mediaList.filter(
       (media) => media.weeklyTop && media.weeklyTop[0].isInTop
@@ -63,10 +64,10 @@ const TopFilms = () => {
                   text={media.weeklyTop[0].rank?.toString() || ""}
                 />
                 <div
-                  className={`relative max-w-fit w-[398px] translate-x-[-79px] ${styles["top-films__swiper-slide-link-wrapper"]}`}
+                  className={`relative translate-x-[-79px] ${styles["top-films__swiper-slide-link-wrapper"]}`}
                 >
                   <Image
-                    className={`rounded-[20px] min-w-[398px] h-[597px] ${styles["top-films__swiper-slide-link-wrapper-image"]}`}
+                    className={`rounded-[20px] max-w-[398px] max-h-[597px] ${styles["top-films__swiper-slide-link-wrapper-image"]}`}
                     src={media.thumbnail}
                     width={398}
                     height={597}

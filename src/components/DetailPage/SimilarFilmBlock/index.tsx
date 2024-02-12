@@ -48,14 +48,14 @@ const SimilarFilmBlock = ({ mediaItem, filmsAndSeriesData }: SimilarFilmProps) =
                 key={film.id}
               >
                 <Link
-                  className={`relative ${styles["similar__swiper-slide-link"]}`}
+                  className={`relative flex ${styles["similar__swiper-slide-link"]}`}
                   href={film.id.toString()}
                 >
                   <div
                     className={`relative ${styles["similar__swiper-slide-link-wrapper"]}`}
                   >
                     <Image
-                      className="rounded-[20px] max-w-[255px] max-h-[382px]"
+                      className="rounded-[20px] max-h-[382px]"
                       src={film.thumbnail}
                       width={255}
                       height={382}
