@@ -36,7 +36,7 @@ const NewFilms = () => {
                   className={`relative max-w-fit ${styles["new-films__swiper-slide-link-wrapper"]}`}
                 >
                   <Image
-                    className="rounded-[20px] max-w-[398px] max-h-[597px]"
+                    className="rounded-[20px] max-w-auto max-h-[597px]"
                     src={media.thumbnail}
                     width={398}
                     height={597}

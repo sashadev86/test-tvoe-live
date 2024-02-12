@@ -29,7 +29,7 @@ const SeasonSeriesBlock = ({ mediaItem, selectedSeason }: SeasonSeriesBlockProps
                   href="#"
                 >
                   <Image
-                    className={`mb-[40px] max-w-[544px] max-h-[306px] rounded-[20px] ${styles["series__swiper-slide-link-image"]} transition-transform duration-300 ease-in-out`}
+                    className={`mb-[40px] max-w-[544px] max-h-[306px] w-full rounded-[20px] ${styles["series__swiper-slide-link-image"]} transition-transform duration-300 ease-in-out`}
                     src={episode.thumbnail}
                     width={544}
                     height={306}
