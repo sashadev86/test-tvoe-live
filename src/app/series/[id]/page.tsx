@@ -1,11 +1,19 @@
+import { filmsAndSeriesData } from "@/Data";
 import DetailPage from "@/components/DetailPage";
-// import "swiper/css";
 
 interface Props {
   params: {
     id: string;
   };
 }
+
+export const generateStaticParams = () => {
+  return filmsAndSeriesData.mediaList.map((item) => {
+    return {
+      id: item.id.toString()
+    }
+  })
+} 
 
 const DetailFilm = ({ params }: Props) => {
   const id = params.id;
