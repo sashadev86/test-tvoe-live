@@ -27,7 +27,7 @@
 ### Демонстрация:
 1. Клонируйте репазиторий:
 ```
- https://github.com/BANDITOS86/test-tvoe-live/tree/dev
+ https://github.com/sashadev86/test-tvoe-live/tree/dev
 ```
 
 2. Для подтягивания необходимых библиотек и зависимостей, в консоли выполните команду:
@@ -48,6 +48,6 @@
 
 ### Результат задания:
 ##### Главная:
-[![My cv](https://github.com/BANDITOS86/my-img/blob/main/tvoe-live.png?raw=true)](https://test-tvoe-live.vercel.app/)
+[![My cv](https://github.com/sashadev86/my-img/blob/main/tvoe-live.png?raw=true)](https://test-tvoe-live.vercel.app/)
 ##### Детальная: 
-[![My cv](https://github.com/BANDITOS86/my-img/blob/main/tvoe-live-detail.png?raw=true)](https://test-tvoe-live.vercel.app/)
+[![My cv](https://github.com/sashadev86/my-img/blob/main/tvoe-live-detail.png?raw=true)](https://test-tvoe-live.vercel.app/)
